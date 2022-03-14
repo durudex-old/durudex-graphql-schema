@@ -1,0 +1,48 @@
+# Copyright © 2022 Durudex
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+extend type Mutation {
+  """
+  User Sign Up
+  """
+  signUp(input: SignUpInput!): Uint64! @emailCode
+
+  """
+  User Sign In.
+  """
+  signIn(input: SignInInput!): Tokens!
+
+  """
+  Refresh authorization tokens.
+  """
+  refreshTokens(input: RefreshTokensInput!): Tokens!
+}
+
+"""
+User Sign Up input.
+"""
+input SignUpInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+"""
+User Sign In input.
+"""
+input SignInInput {
+  username: String!
+  password: String!
+}
+
+"""
+Authorization refresh token input.
+"""
+input RefreshTokensInput {
+  """
+  Refresh token.
+  """
+  token: String!
+}

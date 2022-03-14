@@ -1,0 +1,22 @@
+# Copyright © 2022 Durudex
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+scalar Uint64
+
+schema {
+  mutation: Mutation
+  query: Query
+}
+
+type Mutation
+
+type Query {
+  ping: String!
+}
+
+directive @emailCode(email: String!, code: Uint64!) on FIELD
+  | FIELD_DEFINITION
+  | INPUT_FIELD_DEFINITION
+  | ARGUMENT_DEFINITION
