@@ -1,0 +1,11 @@
+# Copyright © 2022 Durudex
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+directive @emailCode(email: String!, code: Uint64!) on FIELD
+  | FIELD_DEFINITION
+  | INPUT_FIELD_DEFINITION
+  | ARGUMENT_DEFINITION
+
+directive @auth on FIELD_DEFINITION

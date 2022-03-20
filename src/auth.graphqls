@@ -18,6 +18,11 @@ extend type Mutation {
   Refresh authorization tokens.
   """
   refreshTokens(input: RefreshTokensInput!): Tokens!
+
+  """
+  Logout user session by refresh token.
+  """
+  logout(input: RefreshTokensInput!): Boolean! @auth
 }
 
 """

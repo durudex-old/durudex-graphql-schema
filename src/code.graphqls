@@ -7,7 +7,7 @@ extend type Mutation {
   """
   Getting code by email address.
   """
-  getCodeByEmail(input: GetCodeByEmailInput!): Status!
+  getCodeByEmail(input: GetCodeByEmailInput!): Boolean!
 }
 
 """
