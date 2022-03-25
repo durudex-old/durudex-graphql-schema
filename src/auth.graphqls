@@ -7,7 +7,7 @@ extend type Mutation {
   """
   User Sign Up
   """
-  signUp(input: SignUpInput!): Uint64! @emailCode
+  signUp(input: SignUpInput!): ID!
 
   """
   User Sign In.
@@ -22,23 +22,46 @@ extend type Mutation {
   """
   Logout user session by refresh token.
   """
-  logout(input: RefreshTokensInput!): Boolean! @auth
+  logout(input: RefreshTokensInput!): Boolean! @isAuth
 }
 
 """
 User Sign Up input.
 """
 input SignUpInput {
+  """
+  Account username.
+  """
   username: String!
+
+  """
+  User email.
+  """
   email: String!
+
+  """
+  User password.
+  """
   password: String!
+
+  """
+  User verification code.
+  """
+  code: Uint64!
 }
 
 """
 User Sign In input.
 """
 input SignInInput {
+  """
+  Account username.
+  """
   username: String!
+
+  """
+  User password
+  """
   password: String!
 }
 

@@ -14,5 +14,8 @@ extend type Mutation {
 Getting code by email address input.
 """
 input GetCodeByEmailInput {
+  """
+  User email.
+  """
   email: String!
 }
