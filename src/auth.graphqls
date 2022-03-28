@@ -90,6 +90,7 @@ input ForgotPasswordInput {
   username: String
 
   """
+  User email.
   """
   email: String!
 
