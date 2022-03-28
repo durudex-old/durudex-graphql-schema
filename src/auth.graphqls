@@ -17,12 +17,17 @@ extend type Mutation {
   """
   Refresh authorization tokens.
   """
-  refreshTokens(input: RefreshTokensInput!): Tokens!
+  refreshTokens(input: RefreshTokenInput!): Tokens!
 
   """
   Logout user session by refresh token.
   """
-  logout(input: RefreshTokensInput!): Boolean! @isAuth
+  logout(input: RefreshTokenInput!): Boolean! @isAuth
+
+  """
+  Forgot user password.
+  """
+  forgotPassword(input: ForgotPasswordInput!): Boolean!
 }
 
 """
@@ -68,9 +73,38 @@ input SignInInput {
 """
 Authorization refresh token input.
 """
-input RefreshTokensInput {
+input RefreshTokenInput {
   """
   Refresh token.
   """
   token: String!
+}
+
+"""
+Forgot user password input.
+"""
+input ForgotPasswordInput {
+  """
+  Username.
+  """
+  username: String
+
+  """
+  """
+  email: String!
+
+  """
+  Old user password.
+  """
+  old: String!
+
+  """
+  New user password.
+  """
+  new: String!
+
+  """
+  User verification code.
+  """
+  code: Uint64!
 }
