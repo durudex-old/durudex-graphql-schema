@@ -85,24 +85,14 @@ Forgot user password input.
 """
 input ForgotPasswordInput {
   """
-  Username.
-  """
-  username: String
-
-  """
   User email.
   """
   email: String!
 
   """
-  Old user password.
-  """
-  old: String!
-
-  """
   New user password.
   """
-  new: String!
+  password: String!
 
   """
   User verification code.

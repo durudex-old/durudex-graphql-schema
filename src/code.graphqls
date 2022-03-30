@@ -5,17 +5,17 @@
 
 extend type Mutation {
   """
-  Getting code by email address.
+  Getting verification code by email address.
   """
   getCodeByEmail(input: GetCodeByEmailInput!): Boolean!
 }
 
 """
-Getting code by email address input.
+Getting verification code by email address input.
 """
 input GetCodeByEmailInput {
   """
-  User email.
+  User email address.
   """
   email: String!
 }
