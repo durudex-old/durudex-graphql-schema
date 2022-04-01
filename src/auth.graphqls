@@ -23,11 +23,6 @@ extend type Mutation {
   Logout user session by refresh token.
   """
   logout(input: RefreshTokenInput!): Boolean! @isAuth
-
-  """
-  Forgot user password.
-  """
-  forgotPassword(input: ForgotPasswordInput!): Boolean!
 }
 
 """
@@ -78,24 +73,4 @@ input RefreshTokenInput {
   Refresh token.
   """
   token: String!
-}
-
-"""
-Forgot user password input.
-"""
-input ForgotPasswordInput {
-  """
-  User email.
-  """
-  email: String!
-
-  """
-  New user password.
-  """
-  password: String!
-
-  """
-  User verification code.
-  """
-  code: Uint64!
 }
