@@ -3,6 +3,48 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
+"""
+User type.
+"""
+type User implements Node {
+  """
+  User id.
+  """
+  id: ID!
+
+  """
+  Username.
+  """
+  username: String!
+
+  """
+  User joined date.
+  """
+  joinedIn: Timestamp!
+
+  """
+  User last visit date.
+  """
+  lastVisit: Timestamp!
+
+  """
+  User verified status.
+  """
+  verified: Boolean!
+
+  """
+  User avatar url.
+  """
+  avatarUrl: String
+}
+
+extend type Query {
+  """
+  Get user by target type.
+  """
+  getUser(id: ID!): User
+}
+
 extend type Mutation {
   """
   Forgot user password.

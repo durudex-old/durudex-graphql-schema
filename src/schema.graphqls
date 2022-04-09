@@ -10,6 +10,8 @@ schema {
 
 type Mutation
 
-type Query {
-  ping: String!
+type Query
+
+interface Node {
+  id: ID!
 }
