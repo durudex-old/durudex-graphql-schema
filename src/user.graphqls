@@ -18,9 +18,9 @@ type User implements Node {
   username: String!
 
   """
-  User joined date.
+  User created date.
   """
-  joinedIn: Timestamp!
+  createdAt: Timestamp!
 
   """
   User last visit date.
@@ -40,7 +40,7 @@ type User implements Node {
 
 extend type Query {
   """
-  Get user by target type.
+  Get user by id.
   """
   getUser(id: ID!): User
 }

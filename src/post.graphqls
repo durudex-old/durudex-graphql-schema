@@ -1,0 +1,58 @@
+# Copyright © 2022 Durudex
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+"""
+Post type.
+"""
+type Post implements Node {
+  """
+  Post id.
+  """
+  id: ID!
+
+  """
+  User author id.
+  """
+  userId: ID!
+
+  """
+  Post text.
+  """
+  text: String!
+
+  """
+  Post created date.
+  """
+  createdAt: Timestamp!
+
+  """
+  Post updated date.
+  """
+  updatedAt: Timestamp
+}
+
+extend type Query {
+  """
+  Get post by id.
+  """
+  getPost(id: ID!): Post
+}
+
+extend type Mutation {
+  """
+  Create a new user post.
+  """
+  createPost(input: CreatePostInput!): ID! @isAuth
+}
+
+"""
+Create post input.
+"""
+input CreatePostInput {
+  """
+  Post text.
+  """
+  text: String!
+}
