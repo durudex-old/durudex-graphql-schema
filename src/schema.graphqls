@@ -8,10 +8,19 @@ schema {
   query: Query
 }
 
+"""
+Durudex API Mutations.
+"""
 type Mutation
 
+"""
+Durudex API Queries.
+"""
 type Query
 
+"""
+GraphQL Node interface.
+"""
 interface Node {
   id: ID!
 }
