@@ -15,7 +15,7 @@ type Post implements Node {
   """
   User author id.
   """
-  userId: ID!
+  authorId: ID!
 
   """
   Post text.
