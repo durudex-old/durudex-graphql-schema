@@ -30,14 +30,14 @@ extend type Mutation {
   signIn(input: SignInInput!): Tokens!
 
   """
-  Refresh authorization tokens.
+  User Sign Out.
   """
-  refreshTokens(input: RefreshTokenInput!): Tokens!
+  signOut(input: RefreshTokenInput!): Boolean! @isAuth
 
   """
-  Logout user session by refresh token.
+  Refresh authorization token.
   """
-  logout(input: RefreshTokenInput!): Boolean! @isAuth
+  refreshToken(input: RefreshTokenInput!): String!
 }
 
 """
