@@ -45,6 +45,11 @@ extend type Mutation {
   Create a new user post.
   """
   createPost(input: CreatePostInput!): ID! @isAuth
+
+  """
+  Delete user post.
+  """
+  deletePost(id: ID!): Boolean! @isAuth
 }
 
 """
