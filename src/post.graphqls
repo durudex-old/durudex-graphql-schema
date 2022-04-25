@@ -50,12 +50,32 @@ extend type Mutation {
   Delete user post.
   """
   deletePost(id: ID!): Boolean! @isAuth
+
+  """
+  Update user post.
+  """
+  updatePost(input: UpdatePostInput!): Boolean! @isAuth
 }
 
 """
 Create post input.
 """
 input CreatePostInput {
+  """
+  Post text.
+  """
+  text: String!
+}
+
+"""
+Update post input.
+"""
+input UpdatePostInput {
+  """
+  Post id.
+  """
+  id: ID!
+
   """
   Post text.
   """
