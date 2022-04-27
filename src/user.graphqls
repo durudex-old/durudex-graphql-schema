@@ -50,6 +50,11 @@ extend type Mutation {
   Forgot user password.
   """
   forgotPassword(input: ForgotPasswordInput!): Boolean!
+
+  """
+  Change user avatar.
+  """
+  changeAvatar(file: Upload!): String!
 }
 
 """

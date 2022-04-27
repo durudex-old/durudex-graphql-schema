@@ -12,3 +12,8 @@ scalar Uint64
 Timestamp.
 """
 scalar Timestamp
+
+"""
+Upload file.
+"""
+scalar Upload
