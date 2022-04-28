@@ -54,7 +54,7 @@ extend type Mutation {
   """
   Change user avatar.
   """
-  changeAvatar(file: Upload!): String!
+  changeAvatar(file: Upload!): String! @isAuth
 }
 
 """
