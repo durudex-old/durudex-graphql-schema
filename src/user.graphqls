@@ -47,6 +47,11 @@ extend type Query {
 
 extend type Mutation {
   """
+  Getting verification code to email.
+  """
+  getVerifyEmailCode(email: String!): Boolean!
+
+  """
   Forgot user password.
   """
   forgotPassword(input: ForgotPasswordInput!): Boolean!
