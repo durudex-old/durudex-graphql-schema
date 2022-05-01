@@ -74,7 +74,7 @@ input CreatePostInput {
   """
   Post attachments.
   """
-  attachments: [Upload!]
+  attachments: [UploadFile!]
 }
 
 """

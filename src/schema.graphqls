@@ -22,5 +22,23 @@ type Query
 GraphQL Node interface.
 """
 interface Node {
+  """
+  Node id.
+  """
   id: ID!
+}
+
+"""
+Upload files input.
+"""
+input UploadFile {
+  """
+  File id.
+  """
+  id: Int!
+
+  """
+  File data.
+  """
+  file: Upload!
 }

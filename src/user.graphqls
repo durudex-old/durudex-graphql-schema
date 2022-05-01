@@ -57,9 +57,9 @@ extend type Mutation {
   forgotPassword(input: ForgotPasswordInput!): Boolean!
 
   """
-  Change user avatar.
+  Update user avatar.
   """
-  changeAvatar(file: Upload!): String! @isAuth
+  updateAvatar(file: Upload!): String! @isAuth
 }
 
 """
