@@ -40,9 +40,9 @@ type User implements Node {
 
 extend type Query {
   """
-  Get user by id.
+  Getting user.
   """
-  getUser(id: ID!): User
+  user(id: ID!): User
 }
 
 extend type Mutation {
