@@ -20,11 +20,6 @@ type Tokens {
 
 extend type Mutation {
   """
-  User Sign Up
-  """
-  signUp(input: SignUpInput!): ID!
-
-  """
   User Sign In.
   """
   signIn(input: SignInInput!): Tokens!
@@ -38,31 +33,6 @@ extend type Mutation {
   Refresh authorization token.
   """
   refreshToken(input: RefreshTokenInput!): String!
-}
-
-"""
-User Sign Up input.
-"""
-input SignUpInput {
-  """
-  Account username.
-  """
-  username: String!
-
-  """
-  User email.
-  """
-  email: String!
-
-  """
-  User password.
-  """
-  password: String!
-
-  """
-  User verification code.
-  """
-  code: Uint64!
 }
 
 """
