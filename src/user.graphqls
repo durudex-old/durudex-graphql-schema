@@ -40,6 +40,11 @@ type User implements Node {
 
 extend type Query {
   """
+  Getting me.
+  """
+  me: User! @isAuth
+
+  """
   Getting user.
   """
   user(id: ID!): User
