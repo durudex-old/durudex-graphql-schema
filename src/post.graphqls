@@ -23,11 +23,6 @@ type Post implements Node {
   text: String!
 
   """
-  Post created date.
-  """
-  createdAt: Timestamp!
-
-  """
   Post updated date.
   """
   updatedAt: Timestamp
