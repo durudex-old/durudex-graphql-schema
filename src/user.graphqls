@@ -47,11 +47,6 @@ extend type Query {
 
 extend type Mutation {
   """
-  User Sign Up
-  """
-  signUp(input: SignUpInput!): ID!
-
-  """
   Creating a new verification code to email.
   """
   createVerifyEmailCode(email: String!): Boolean!
@@ -65,31 +60,6 @@ extend type Mutation {
   Update user avatar.
   """
   updateAvatar(file: Upload!): String! @isAuth
-}
-
-"""
-User Sign Up input.
-"""
-input SignUpInput {
-  """
-  Account username.
-  """
-  username: String!
-
-  """
-  User email.
-  """
-  email: String!
-
-  """
-  User password.
-  """
-  password: String!
-
-  """
-  User verification code.
-  """
-  code: Uint64!
 }
 
 """
