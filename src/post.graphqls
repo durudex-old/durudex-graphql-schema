@@ -40,7 +40,7 @@ type PostConnection {
   """
   List of nodes.
   """
-  nodes(): [Post]
+  nodes: [Post]
 }
 
 extend type Query {
