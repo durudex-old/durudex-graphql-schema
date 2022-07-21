@@ -33,6 +33,16 @@ type Post implements Node {
   attachments: [String!]
 }
 
+"""
+List of post owned by the subject.
+"""
+type PostConnection {
+  """
+  List of nodes.
+  """
+  nodes(): [Post]
+}
+
 extend type Query {
   """
   Getting user post.
