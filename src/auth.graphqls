@@ -32,12 +32,12 @@ extend type Mutation {
   """
   User Sign Out.
   """
-  signOut(input: RefreshTokenInput!): Boolean! @isAuth
+  signOut(token: String!): Boolean! @isAuth
 
   """
   Refresh authorization token.
   """
-  refreshToken(input: RefreshTokenInput!): String!
+  refreshToken(token: String!): String!
 }
 
 """
@@ -78,14 +78,4 @@ input SignInInput {
   User password
   """
   password: String!
-}
-
-"""
-Authorization refresh token input.
-"""
-input RefreshTokenInput {
-  """
-  Refresh token.
-  """
-  token: String!
 }
