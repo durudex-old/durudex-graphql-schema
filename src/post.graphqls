@@ -38,9 +38,34 @@ List of post owned by the subject.
 """
 type PostConnection {
   """
-  List of nodes.
+  A list of nodes.
   """
   nodes: [Post]
+
+  """
+  A list of edges.
+  """
+  edges: [PostEdge]
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+An edge in a post connection.
+"""
+type PostEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge.
+  """
+  node: Post
 }
 
 extend type Query {
