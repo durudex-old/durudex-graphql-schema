@@ -4,7 +4,72 @@
 # LICENSE file in the root directory of this source tree.
 
 """
-Authorization tokens.
+User session.
+"""
+type Session {
+  """
+  Session id.
+  """
+  id: ID!
+
+  """
+  Session user id.
+  """
+  userId: ID!
+
+  """
+  User session ip address.
+  """
+  ip: String!
+
+  """
+  Session expires in.
+  """
+  expiresIn: Timestamp!
+}
+
+"""
+List of session owned by the subject.
+"""
+type SessionConnection {
+  """
+  A list of nodes.
+  """
+  nodes: [Session]
+
+  """
+  A list of edges.
+  """
+  edges: [SessionEdge]
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  Identifies the total count of items in the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+An edge in a session connection.
+"""
+type SessionEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge.
+  """
+  node: Session
+}
+
+"""
+Auth tokens.
 """
 type Tokens {
   """
@@ -32,12 +97,49 @@ extend type Mutation {
   """
   User Sign Out.
   """
-  signOut(token: String!): Boolean! @isAuth
+  signOut(input: SessionCredInput!): Boolean! @isAuth
 
   """
   Refresh authorization token.
   """
-  refreshToken(token: String!): String!
+  refreshToken(input: SessionCredInput!): String!
+
+  """
+  Delete user session.
+  """
+  deleteSession(id: ID!): Boolean! @isAuth
+}
+
+extend type Query {
+  """
+  Getting user session.
+  """
+  session(id: ID!) Session @isAuth
+
+  """
+  Getting user sessions.
+  """
+  sessions(
+    """
+    Returns the first n elements from the list.
+    """
+    first: Int
+
+    """
+    Returns the last n elements from the list.
+    """
+    last: Int
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+
+    """
+    Returns the elements in the list that come after the specified cursor.
+    """
+    after: String
+  ) SessionConnection! @isAuth
 }
 
 """
@@ -63,6 +165,11 @@ input SignUpInput {
   User verification code.
   """
   code: Uint64!
+
+  """
+  Client secret key.
+  """
+  secret: String!
 }
 
 """
@@ -78,4 +185,24 @@ input SignInInput {
   User password
   """
   password: String!
+
+  """
+  Client secret key.
+  """
+  secret: String!
+}
+
+"""
+Session credentials input.
+"""
+input SessionCredInput {
+  """
+  Refresh token.
+  """
+  refresh: String!
+
+  """
+  Client secret key.
+  """
+  secret: String!
 }
