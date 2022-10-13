@@ -107,7 +107,7 @@ extend type Mutation {
   """
   Delete user session.
   """
-  deleteSession(id: ID!): Boolean! @isAuth
+  deleteSession(input: DeleteSessionInput!): Boolean! @isAuth
 }
 
 extend type Query {
@@ -196,6 +196,26 @@ input SignInInput {
 Session credentials input.
 """
 input SessionCredInput {
+  """
+  Refresh token.
+  """
+  refresh: String!
+
+  """
+  Client secret key.
+  """
+  secret: String!
+}
+
+"""
+Delete user session input.
+"""
+type DeleteSessionInput {
+  """
+  Session id.
+  """
+  id: ID!
+
   """
   Refresh token.
   """
