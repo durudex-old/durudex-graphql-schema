@@ -114,7 +114,7 @@ extend type Query {
   """
   Getting user session.
   """
-  session(id: ID!) Session @isAuth
+  session(id: ID!): Session @isAuth
 
   """
   Getting user sessions.
@@ -139,7 +139,7 @@ extend type Query {
     Returns the elements in the list that come after the specified cursor.
     """
     after: String
-  ) SessionConnection! @isAuth
+  ): SessionConnection! @isAuth
 }
 
 """
@@ -210,7 +210,7 @@ input SessionCredInput {
 """
 Delete user session input.
 """
-type DeleteSessionInput {
+input DeleteSessionInput {
   """
   Session id.
   """
