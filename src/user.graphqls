@@ -8,6 +8,26 @@ User type.
 """
 type User implements Node {
   """
+  User id.
+  """
+  id: ID!
+
+  """
+  Username.
+  """
+  username: String!
+
+  """
+  User verified status.
+  """
+  verified: Boolean!
+
+  """
+  User avatar url.
+  """
+  avatarUrl: String
+
+  """
   Getting user posts.
   """
   posts(
@@ -31,31 +51,6 @@ type User implements Node {
     """
     after: String
   ): PostConnection!
-
-  """
-  User id.
-  """
-  id: ID!
-
-  """
-  Username.
-  """
-  username: String!
-
-  """
-  User last visit date.
-  """
-  lastVisit: Timestamp!
-
-  """
-  User verified status.
-  """
-  verified: Boolean!
-
-  """
-  User avatar url.
-  """
-  avatarUrl: String
 }
 
 extend type Query {
