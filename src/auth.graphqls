@@ -30,11 +30,6 @@ extend type Mutation {
   signIn(input: SignInInput!): Tokens!
 
   """
-  User Sign Out.
-  """
-  signOut(input: SessionCredInput!): Boolean! @isAuth
-
-  """
   Refresh authorization token.
   """
   refreshToken(input: SessionCredInput!): String!
@@ -75,9 +70,9 @@ User Sign In input.
 """
 input SignInInput {
   """
-  Account username.
+  Account login.
   """
-  username: String!
+  login: String!
 
   """
   User password
